@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -12,7 +12,21 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
+
+
+
+
+
 //temporary arrangement. later use useTheme
+import {
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemText,
+  Collapse,
+} from "@mui/material";
+
+import { ExpandLess, ExpandMore } from "@mui/icons-material";
 
 const pages = ["Trade", "Analyse", "Watchlist", "Positions", "Daily Market"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
@@ -21,6 +35,13 @@ function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
+  // open and close state
+  //of the collapsible component
+  const [isOpen, setIsOpen] = useState(true);
+
+  const handleClick = () => {
+    setIsOpen(!isOpen);
+  };
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -99,23 +120,13 @@ function Navbar() {
               flexGrow: 1,
               display: { xs: "none", md: "flex" },
               justifyContent: "center",
+              "& .MuiBox-root": {
+                height: "100%",
+              },
             }}
           >
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{
-                  my: 2,
-                  color: "#344054",
-                  display: "block",
-                  paddingLeft: "24px",
-                  paddingRight: "24px",
-                }}
-              >
-                {page}
-              </Button>
-            ))}
+            {/* Put all your menu buttons here  */}
+            <h1>Placeholder</h1>
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
@@ -124,6 +135,8 @@ function Navbar() {
                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
               </IconButton>
             </Tooltip>
+            
+
             <Menu
               sx={{ mt: "45px" }}
               id="menu-appbar"
