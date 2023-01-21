@@ -38,8 +38,10 @@ function Navbar() {
 
   return (
     <AppBar position="static" sx={{backgroundColor:'#ffffff', color:'#5B5B5B'}}>
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
+      <Container maxWidth="xl" 
+      >
+        <Toolbar disableGutters 
+        >
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
           <Typography
             variant="h6"
@@ -71,6 +73,8 @@ function Navbar() {
               <MenuIcon />
             </IconButton>
             <Menu
+
+           
               id="menu-appbar"
               anchorEl={anchorElNav}
               anchorOrigin={{
@@ -86,10 +90,11 @@ function Navbar() {
               onClose={handleCloseNavMenu}
               sx={{
                 display: { xs: 'block', md: 'none' },
+               
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                <MenuItem key={page}  onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
               ))}
