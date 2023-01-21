@@ -14,7 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 //temporary arrangement. later use useTheme
 
-const pages = ['Products', 'Pricing', 'Blog'];
+const pages = ['Trade', 'Analyse', 'Watchlist', 'Positions', 'Daily Market'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function Navbar() {
@@ -52,13 +52,14 @@ function Navbar() {
               mr: 2,
               display: { xs: 'none', md: 'flex' },
               fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
+              fontWeight: 600,
+              // letterSpacing: '.3rem',
+              textTransform:'uppercase',
               color: 'inherit',
               textDecoration: 'none',
             }}
           >
-            LOGO
+            Sensibull
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -72,33 +73,7 @@ function Navbar() {
             >
               <MenuIcon />
             </IconButton>
-            <Menu
-
-           
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: 'block', md: 'none' },
-               
-              }}
-            >
-              {pages.map((page) => (
-                <MenuItem key={page}  onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
+            
           </Box>
           <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           <Typography
@@ -119,7 +94,7 @@ function Navbar() {
           >
             LOGO
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } , justifyContent:'center'}}>
             {pages.map((page) => (
               <Button
                 key={page}
