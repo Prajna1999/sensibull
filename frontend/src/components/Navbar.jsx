@@ -12,7 +12,7 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
-
+import {MenuButton} from "./barrel.js"
 
 
 
@@ -60,7 +60,8 @@ function Navbar() {
   return (
     <AppBar
       position="static"
-      sx={{ backgroundColor: "#ffffff", color: "#5B5B5B" }}
+      sx={{ backgroundColor: "#ffffff", color: "#5B5B5B", borderBottom:"1px solid #DADBDC" , zIndex:"1290"}}
+      elevation={0}
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
@@ -126,7 +127,8 @@ function Navbar() {
             }}
           >
             {/* Put all your menu buttons here  */}
-            <h1>Placeholder</h1>
+            <MenuButton name="Trade" />
+            <MenuButton name="Analyse" />
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
