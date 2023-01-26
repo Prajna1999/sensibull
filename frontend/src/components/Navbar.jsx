@@ -14,6 +14,8 @@ import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import {MenuButton} from "./barrel.js"
 
+import {ReactComponent as Logo} from "../../public/logo.svg"
+
 
 
 
@@ -65,7 +67,10 @@ function Navbar() {
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+          {/* <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+           */}
+
+          <Logo style={{width:'30px'}}/>
           <Typography
             variant="h6"
             noWrap
@@ -73,6 +78,7 @@ function Navbar() {
             href="/"
             sx={{
               mr: 2,
+              ml:1,
               display: { xs: "none", md: "flex" },
               fontFamily: "monospace",
               fontWeight: 600,
@@ -98,6 +104,8 @@ function Navbar() {
             </IconButton>
           </Box>
           <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+          
+          
           <Typography
             variant="h5"
             noWrap
@@ -121,9 +129,9 @@ function Navbar() {
               flexGrow: 1,
               display: { xs: "none", md: "flex" },
               justifyContent: "center",
-              "& .MuiBox-root": {
-                height: "100%",
-              },
+              // "& .MuiBox-root": {
+              //   height: "100%",
+              // },
             }}
           >
             {/* Put all your menu buttons here  */}

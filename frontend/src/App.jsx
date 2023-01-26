@@ -14,6 +14,8 @@ import {
 } from "react-router-dom";
 
 import Layout from './scenes/Layout.jsx';
+import PlaceOrderCard from './scenes/PlaceOrder.jsx';
+import { element } from 'prop-types';
 
 //temporary error element. to be made a component later
 function ErrorBoundary(){
@@ -29,25 +31,36 @@ function App() {
 
 
   const router=createBrowserRouter(
-    createRoutesFromElements(
-      <Route path='/' element={<Layout />} errorElement={<ErrorBoundary />} >
+    [
+      {
+        path:'/',
+        element:<Layout/>,
+        errorElement:<ErrorBoundary/>
+      },
 
-        {/* <Route path='/' element={<Navigate to ="/dashboard"  />} /> */}
+      {
+        path:'placeorder',
+        element:<PlaceOrderCard />,
+        errorElement:<ErrorBoundary />
 
+      },
+      {
+        path:'*',
+        element:<ErrorBoundary />
 
-
-      </Route>
-    )
+      }
+    ]
   )
 
   
   return (
     <div className="App">
      
-        <CssBaseline />
+      
         
         <RouterProvider router={router} />
 
+      
         
       
     </div>
